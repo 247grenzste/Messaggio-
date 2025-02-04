@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messaggio per Te</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background-color: #f4f4f4;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+        }
+        #message {
+            display: none;
+            font-size: 18px;
+            color: #333;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="login-box">
+        <h2>Accedi per vedere il messaggio</h2>
+        <input type="text" id="username" placeholder="Nome utente"><br>
+        <input type="password" id="password" placeholder="Password"><br>
+        <button onclick="checkLogin()">Accedi</button>
+        <p id="error" style="color: red; display: none;">Nome utente o password errati.</p>
+    </div>
+
+    <div class="container" id="message">
+        <h2>Cara Marianna</h2>
+        <p>Ti voglio bene! ❤️</p>
+        <p>Cara Marianna,
+
+Volevo dedicarti queste parole perché sei una persona speciale per me. Anche se ci vediamo solo a scuola, ogni momento con te è prezioso. Sei quella presenza che rende le giornate più leggere, più belle, più vere.
+
+Voglio che tu sappia che ti voglio davvero tanto bene e che per qualsiasi cosa, in qualsiasi momento, io ci sarò sempre per te. Non importa cosa succeda, non sarai mai sola, perché io sarò lì, pronto a sostenerti, a farti sorridere, ad ascoltarti.
+
+Grazie per essere come sei, per migliorarmi ogni giorno con la tua amicizia, il tuo affetto e la tua sincerità. Sei una persona incredibile, e non smetterò mai di dirlo.
+
+Con tanto affetto,
+Stefano  ❤️<p>
+    </div>
+
+    <script>
+        function checkLogin() {
+            var user = document.getElementById("username").value;
+            var pass = document.getElementById("password").value;
+
+            if (user === "amica" && pass === "speciale") {
+                document.getElementById("login-box").style.display = "none";
+                document.getElementById("message").style.display = "block";
+            } else {
+                document.getElementById("error").style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
